@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -30,6 +31,8 @@ public class OrderScreenController implements Initializable {
     ListView allToppings, selectedToppings;
     @FXML
     Parent customToppingFunctionality;
+    @FXML
+    TextArea textArea;
 
     /**
      * Initializes ComboBoxes, ImageView and ListView to default values.
