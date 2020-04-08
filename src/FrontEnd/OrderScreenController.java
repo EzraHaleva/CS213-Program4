@@ -21,6 +21,10 @@ import java.util.ResourceBundle;
  * Controller for FXML Order Screen GUI.
  */
 public class OrderScreenController implements Initializable {
+
+    int MIN_TOPPINGS = 1;
+    int MAX_TOPPINGS = 6;
+
     @FXML
     ComboBox pizzaTypeComboBox;
     @FXML
@@ -135,8 +139,38 @@ public class OrderScreenController implements Initializable {
         for(Object topping : selectedToppings.getItems()){
             toppings.add((String)topping);
         }
+        if (style.equals("Build Your Own") && !isValidNumToppings(toppings)){
+            String toppingError = createToppingError(toppings);
+            textArea.appendText(toppingError);
+            return;
+        }
         PizzaOrder.addPizzaToOrder(style, size, toppings);
         System.out.print(PizzaOrder.details());
     }
 
+    /**
+     * Checks if there is no less than 1 and no more than 6 toppings.
+     * @param toppings
+     * @return
+     */
+    private boolean isValidNumToppings(ArrayList<String> toppings){
+        if (toppings.size() < MIN_TOPPINGS || toppings.size() > MAX_TOPPINGS){
+            return false;
+        }
+        return true;
+
+    }
+
+    /**
+     * Create topping error based on number of toppings.
+     */
+    private String createToppingError(ArrayList<String> toppings){
+        String error;
+        if (toppings.size() < MIN_TOPPINGS){
+            error = "Please select at least one topping\n";
+        } else {
+            error = "Please select at most 6 toppings\n";
+        }
+        return error;
+    }
 }

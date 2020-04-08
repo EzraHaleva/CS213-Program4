@@ -78,7 +78,7 @@
             <VBox layoutX="153.0" layoutY="10.0" prefHeight="233.0" prefWidth="150.0">
                <children>
                   <Separator prefHeight="170.0" prefWidth="96.0" visible="false" />
-                  <Button mnemonicParsing="false" onAction="#addPizzaToOrder" prefHeight="25.0" prefWidth="145.0" text="Add to Order" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addPizzaToOrder" prefHeight="25.0" prefWidth="145.0" text="Add to Order" />
                   <Separator prefHeight="17.0" prefWidth="96.0" visible="false" />
                   <Button mnemonicParsing="false" onAction="#openDetailsScreen" prefHeight="25.0" prefWidth="155.0" text="Show Order" />
                </children>
