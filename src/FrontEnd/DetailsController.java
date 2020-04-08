@@ -1,5 +1,6 @@
 package FrontEnd;
 
+import BackEnd.Pizza;
 import BackEnd.PizzaOrder;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,6 +18,16 @@ public class DetailsController implements Initializable {
 
     @FXML
     Button backButton;
+
+    /**
+     * Clears entire order history.
+     * Invoked when 'Clear Selection' Button is clicked.
+     */
+    public void clear(){
+        PizzaOrder.clearOrder();
+        textArea.appendText("\nYour order has been cleared\n");
+        textArea.appendText(PizzaOrder.details());
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
