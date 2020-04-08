@@ -1,5 +1,8 @@
 package FrontEnd;
 
+import BackEnd.BuildYourOwn;
+import BackEnd.Deluxe;
+import BackEnd.Hawaiian;
 import BackEnd.PizzaOrder;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -139,13 +142,28 @@ public class OrderScreenController implements Initializable {
         for(Object topping : selectedToppings.getItems()){
             toppings.add((String)topping);
         }
-        if (style.equals("Build Your Own") && !isValidNumToppings(toppings)){
-            String toppingError = createToppingError(toppings);
-            textArea.appendText(toppingError);
-            return;
+        switch (style){
+            case "Build Your Own": {
+                if (!isValidNumToppings(toppings)) {
+                    String toppingError = createToppingError(toppings);
+                    textArea.appendText(toppingError);
+                    return;
+                }
+                BuildYourOwn pizza = new BuildYourOwn(size, toppings);
+                textArea.appendText(pizza.toString());
+                break;
+            }
+            case "Hawaiian": {
+                Hawaiian pizza = new Hawaiian(size, toppings);
+                textArea.appendText(pizza.toString());
+                break;
+            }
+            case "Deluxe": {
+                Deluxe pizza = new Deluxe(size, toppings);
+                textArea.appendText(pizza.toString());
+            }
         }
         PizzaOrder.addPizzaToOrder(style, size, toppings);
-        System.out.print(PizzaOrder.details());
     }
 
     /**

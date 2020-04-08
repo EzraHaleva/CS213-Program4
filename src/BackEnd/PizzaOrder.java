@@ -48,17 +48,21 @@ public class PizzaOrder {
      * @param size  Specifies size of pizza
      * @param toppings  A list of toppings on pizza
      */
-    public static void addPizzaToOrder(String style, String size, ArrayList<String> toppings){
+    public static Pizza addPizzaToOrder(String style, String size, ArrayList<String> toppings){
         if(style.equals("Build Your Own")){
             BuildYourOwn pizzaToAdd = new BuildYourOwn(size, toppings);
             pizzaList.add(pizzaToAdd);
+            return pizzaToAdd;
         } else if(style.equals("Hawaiian")){
             Hawaiian pizzaToAdd = new Hawaiian(size, toppings);
             pizzaList.add(pizzaToAdd);
+            return pizzaToAdd;
         } else if(style.equals("Deluxe")){
             Deluxe pizzaToAdd = new Deluxe(size, toppings);
             pizzaList.add(pizzaToAdd);
+            return pizzaToAdd;
         }
+        return null;
     }
 
     /**
