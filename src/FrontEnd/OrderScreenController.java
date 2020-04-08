@@ -126,7 +126,7 @@ public class OrderScreenController implements Initializable {
         Stage detailsStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("DetailsStage.fxml"));
         detailsStage.setTitle("Details");
-        detailsStage.setScene(new Scene(root, 360, 350));
+        detailsStage.setScene(new Scene(root, 700, 350));
         detailsStage.show();
         detailsStage.setResizable(false);
     }
