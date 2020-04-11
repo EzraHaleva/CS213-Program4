@@ -10,9 +10,9 @@ public class BuildYourOwn extends Pizza {
     public int pizzaPrice(){
         int basePrice = 5;
         if (size.equals("Medium")) {
-            basePrice=+2;
+            basePrice+=2;
         } else if (size.equals("Large")) {
-            basePrice=+4;
+            basePrice+=4;
         }
         int numToppings = toppings.size();
         return basePrice + numToppings * 2;
