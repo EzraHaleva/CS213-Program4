@@ -167,6 +167,8 @@ public class OrderScreenController implements Initializable {
             }
         }
         PizzaOrder.addPizzaToOrder(style, size, toppings);
+        resetGUI();
+
     }
 
     /**
@@ -193,5 +195,20 @@ public class OrderScreenController implements Initializable {
             error = "Please select at most 6 toppings\n";
         }
         return error;
+    }
+
+    /**
+     * Reset GUI to default setting.
+     * Style set to Build Your Own, size set to Medium and all Selected
+     * Toppings are cleared.
+     */
+    private void resetGUI(){
+        clearSelection();
+        pizzaSizeComboBox.getSelectionModel().select("Medium");
+        pizzaTypeComboBox.getSelectionModel().select("Build Your Own");
+        pizzaImage.setImage(new Image("/Assets/BuildYourOwn.jpg"));
+        allToppings.getItems().addAll("Beef", "Cheese", "Chicken",
+                "Green Pepper", "Ham", "Mushroom", "Onion", "Pepperoni",
+                "Pineapple", "Sausage");
     }
 }
