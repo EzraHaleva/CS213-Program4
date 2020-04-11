@@ -1,10 +1,10 @@
 package BackEnd;
 
 import java.util.ArrayList;
-import java.util.prefs.BackingStoreException;
 
 /**
  * Class used to represent a Build Your Own pizza.
+ *
  * @author Ezra Haleva
  * @author Robert Bonagura
  */
@@ -26,7 +26,7 @@ public class BuildYourOwn extends Pizza {
 
     /**
      * Determine the price of the pizza based on size and toppings.
-     * @return
+     * @return  int total price of pizza
      */
     public int pizzaPrice(){
         int basePrice = SMALL;

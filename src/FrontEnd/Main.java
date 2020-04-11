@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 
 /**
  * Main class to run Pizza Store application.
+ *
+ * @author Ezra Haleva
+ * @author Robert Bonagura
  */
 public class Main extends Application {
 
@@ -28,7 +31,10 @@ public class Main extends Application {
         PizzaOrder.initialize();
     }
 
-
+    /**
+     * Main method to launch application.
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }

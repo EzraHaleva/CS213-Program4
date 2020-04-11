@@ -1,43 +1,41 @@
 package BackEnd;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
+/**
+ * Class used to test BuildYourOwn method.
+ * Tests the pizzaPrice method.
+ *
+ * @author Robert Bonagura
+ */
 public class BuildYourOwnTest {
 
+   /**
+    * Test pizzaPrice method
+    * For each size pizza test pizza price using 2, 4 and 6 toppings each.
+    */
    @org.junit.Test
    public void pizzaPrice() {
-      //5 steps
-      int numTestCases = 9;
-      BuildYourOwn[] testCases = new BuildYourOwn[numTestCases];
 
       ArrayList<String> toppings1 = new ArrayList<>();
       ArrayList<String> toppings2 = new ArrayList<>();
       ArrayList<String> toppings3 = new ArrayList<>();
 
-      String cheese = "Cheese";
-      String pepperoni = "Pepperoni";
-      String sausage = "Sausage";
-      String onion = "Onion";
-      String ham = "Ham";
-      String pineapple = "Pineapple";
+      toppings1.add("Cheese");
+      toppings1.add("Pepperoni");
 
-      toppings1.add(cheese);
-      toppings1.add(pepperoni);
+      toppings2.add("Cheese");
+      toppings2.add("Pepperoni");
+      toppings2.add("Sausage");
+      toppings2.add("Onion");
 
-      toppings2.add(cheese);
-      toppings2.add(pepperoni);
-      toppings2.add(sausage);
-      toppings2.add(onion);
-
-      toppings3.add(cheese);
-      toppings3.add(pepperoni);
-      toppings3.add(sausage);
-      toppings3.add(onion);
-      toppings3.add(ham);
-      toppings3.add(pineapple);
+      toppings3.add("Cheese");
+      toppings3.add("Pepperoni");
+      toppings3.add("Sausage");
+      toppings3.add("Onion");
+      toppings3.add("Ham");
+      toppings3.add("Pineapple");
 
       BuildYourOwn smallPizza1 = new BuildYourOwn("Small", toppings1);
       BuildYourOwn smallPizza2 = new BuildYourOwn("Small", toppings2);
@@ -48,7 +46,6 @@ public class BuildYourOwnTest {
       BuildYourOwn largePizza1 = new BuildYourOwn("Large", toppings1);
       BuildYourOwn largePizza2 = new BuildYourOwn("Large", toppings2);
       BuildYourOwn largePizza3 = new BuildYourOwn("Large", toppings3);
-
 
       assertEquals(5 + (2 * 2), smallPizza1.pizzaPrice());
       assertEquals(5 + (2 * 4), smallPizza2.pizzaPrice());

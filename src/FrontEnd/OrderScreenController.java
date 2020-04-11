@@ -22,6 +22,9 @@ import java.util.ResourceBundle;
 
 /**
  * Controller for FXML Order Screen GUI.
+ *
+ * @author Ezra Haleva
+ * @author Robert Bonagura
  */
 public class OrderScreenController implements Initializable {
 

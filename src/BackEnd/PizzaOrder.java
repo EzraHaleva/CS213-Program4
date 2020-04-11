@@ -1,29 +1,12 @@
 package BackEnd;
-import FrontEnd.OrderScreenController;
 
 import java.util.ArrayList;
-// CURRENT ISSUES
-/* todo -currently able to place an order for a build your own with no toppings, minimum is 1
-
-   todo -currently able to place an order for a build your own with more than 6 toppings, max is 6
-
-        * For the toppings min and max, if we disable the add to order button when conditions
-          aren't met, then we won't have to do error messages for those.
-
-   todo -details screen does not show details, nor does clear order button work
-
-   todo -output is not done yet, need to add error/success messages.
-
-
-   I didn't do any JUnit testing or javadoc commenting. I can do javadoc at least on Sat night.
-   Feel free to call or text if you have any questions about my code.
-   -Ezra
-
- */
 
 /**
  * Class used to represent all information associated with a single pizza
  * order.
+ *
+ * @author Ezra Haleva
  */
 public class PizzaOrder {
     static ArrayList<Pizza> pizzaList;
@@ -36,14 +19,14 @@ public class PizzaOrder {
     }
 
     /**
-     * Seems redundant, as it does the same things as default constructor.
+     * Calls default constructor, initializing the pizza list.
      */
     public static void initialize(){
         pizzaList = new ArrayList<Pizza>();
     }
 
     /**
-     * Creates specifies pizza and adds to pizza order list.
+     * Creates specified pizza and adds to pizza order list.
      * @param style Specifies what style of pizza
      * @param size  Specifies size of pizza
      * @param toppings  A list of toppings on pizza
