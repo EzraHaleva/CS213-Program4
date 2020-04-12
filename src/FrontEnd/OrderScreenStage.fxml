@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.OrderScreenController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.OrderScreenController">
    <children>
       <HBox prefHeight="205.0" prefWidth="550.0">
          <children>
@@ -85,7 +78,7 @@
             <VBox layoutX="153.0" layoutY="10.0" prefHeight="233.0" prefWidth="150.0">
                <children>
                   <Separator prefHeight="170.0" prefWidth="96.0" visible="false" />
-                  <Button mnemonicParsing="false" onAction="#addPizzaToOrder" prefHeight="25.0" prefWidth="145.0" text="Add to Order" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addPizzaToOrder" prefHeight="25.0" prefWidth="145.0" text="Add to Order" />
                   <Separator prefHeight="17.0" prefWidth="96.0" visible="false" />
                   <Button mnemonicParsing="false" onAction="#openDetailsScreen" prefHeight="25.0" prefWidth="155.0" text="Show Order" />
                </children>
@@ -101,7 +94,7 @@
             <Insets left="25.0" right="25.0" top="5.0" />
          </VBox.margin>
       </HBox>
-      <TextArea prefHeight="120.0" prefWidth="600.0">
+      <TextArea fx:id="textArea" prefHeight="120.0" prefWidth="600.0">
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
          </VBox.margin>
